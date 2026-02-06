@@ -5,8 +5,8 @@ const doc = {
         title: 'Blockbuster Media Store',
         description: 'A store where Movies, Books and CDs are sold.'
     },
-    host: 'localhost:3000',
-    schemes: ['http', 'https']
+    host: 'cse341-team-project-7569.onrender.com',
+    schemes: ['https']
 }
 
 const outputFile = './swagger.json';
