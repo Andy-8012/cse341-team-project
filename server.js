@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParse = require('body-parser')
+const mongodb = require('./data/database')
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -22,9 +23,9 @@ process.on('uncaughtException', (err, origin) => {
 });
 
 
-app.listen(port, () => {
-    console.log('Web Server is listening at port ' + (port));
-});
+//app.listen(port, () => {
+//    console.log('Web Server is listening at port ' + (port));
+//});
 
 mongodb.initDb((err) => {
     if (err) {
