@@ -25,3 +25,13 @@ process.on('uncaughtException', (err, origin) => {
 app.listen(port, () => {
     console.log('Web Server is listening at port ' + (port));
 });
+
+mongodb.initDb((err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        app.listen(port, () => {
+            console.log(`App started on port ${port}`);
+        });
+    }
+});
