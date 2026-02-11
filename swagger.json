@@ -33,6 +33,9 @@
     },
     "/cds/": {
       "get": {
+        "tags": [
+          "cds"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -44,6 +47,9 @@
         }
       },
       "post": {
+        "tags": [
+          "cds"
+        ],
         "description": "",
         "parameters": [
           {
@@ -83,6 +89,9 @@
     },
     "/cds/{id}": {
       "get": {
+        "tags": [
+          "cds"
+        ],
         "description": "",
         "parameters": [
           {
@@ -105,6 +114,9 @@
         }
       },
       "put": {
+        "tags": [
+          "cds"
+        ],
         "description": "",
         "parameters": [
           {
@@ -151,6 +163,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "cds"
+        ],
         "description": "",
         "parameters": [
           {
