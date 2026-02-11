@@ -7,5 +7,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/cds', require('./cd'))
+router.use('/books', require('./books'));
 
 module.exports = router;
