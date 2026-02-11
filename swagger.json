@@ -31,6 +31,8 @@
         }
       }
     },
+    "/cds/": {
+      "get": {
     "/books/": {
       "get": {
         "tags": [
@@ -61,6 +63,7 @@
                 "title": {
                   "example": "any"
                 },
+                "artist": {
                 "author": {
                   "example": "any"
                 },
@@ -70,6 +73,10 @@
                 "genre": {
                   "example": "any"
                 },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "label": {
                 "pages": {
                   "example": "any"
                 },
@@ -93,6 +100,8 @@
         }
       }
     },
+    "/cds/{id}": {
+      "get": {
     "/books/{id}": {
       "get": {
         "tags": [
@@ -143,6 +152,7 @@
                 "title": {
                   "example": "any"
                 },
+                "artist": {
                 "author": {
                   "example": "any"
                 },
@@ -152,6 +162,10 @@
                 "genre": {
                   "example": "any"
                 },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "label": {
                 "pages": {
                   "example": "any"
                 },
@@ -166,6 +180,8 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
           "204": {
             "description": "No Content"
           },
@@ -194,6 +210,8 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
           "204": {
             "description": "No Content"
           },
