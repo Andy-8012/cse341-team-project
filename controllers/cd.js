@@ -2,7 +2,7 @@ const mongodb = require('../data/database')
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-    //swagger.tags=['cds']
+    //#swagger.tags=['cds']
     try {
         const db = mongodb.getDatabase().db();
         const cds = await db
@@ -17,7 +17,7 @@ const getAll = async (req, res) => {
 };
 
 const getById = async (req, res) => {
-    //swagger.tags=['cds']
+    //#swagger.tags=['cds']
     try {
         const cdID = new ObjectId(req.params.id);
 
@@ -38,7 +38,7 @@ const getById = async (req, res) => {
 
 
 const createCD = async (req, res) => {
-    //swagger.tags=['cds']
+    //#swagger.tags=['cds']
     try {
         const cd = {
             title: req.body.title,
@@ -69,7 +69,7 @@ const createCD = async (req, res) => {
 
 
 const updateCD = async (req, res) => {
-    //swagger.tags=['cds']
+    //#swagger.tags=['cds']
     try {
         const cdId = new ObjectId(req.params.id);
 
@@ -108,7 +108,7 @@ const updateCD = async (req, res) => {
 
 
 const deleteCD = async (req, res) => {
-    //swagger.tags=['cds']
+    //#swagger.tags=['cds']
     try {
         const cdId = new ObjectId(req.params.id);
 
