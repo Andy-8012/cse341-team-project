@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const cdController = require('../controllers/cd');
-const cdValidator = require('../middleware/cdValidator')
+const cdValidator = require('../middlewares/cdValidator')
 
 router.get('/', cdController.getAll);
 
