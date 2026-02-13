@@ -7,10 +7,10 @@ router.get('/', moviesController.getAll);
 
 router.get('/:id', moviesController.getSingle);
 
-router.post('/', isAuthenticated, moviesController.createMovies)
+router.post('/', isAuthenticated, moviesController.addMovie)
 
-router.put('/:id', isAuthenticated, moviesController.updateMovies)
+router.put('/:id', isAuthenticated, moviesController.updateMovie)
 
-router.delete('/:id', moviesController.deleteMovies)
+router.delete('/:id', moviesController.deleteMovie)
 
 module.exports = router;

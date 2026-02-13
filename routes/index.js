@@ -19,12 +19,5 @@ router.get('/logout', function (req, res, next) {
     });
 });
 
-router.get('/debug', (req, res) => {
-    res.json({
-        user: req.user,
-        session: req.session
-    });
-});
-
 
 module.exports = router;
