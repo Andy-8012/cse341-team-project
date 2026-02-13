@@ -8,9 +8,9 @@ router.get('/', moviesController.getAll);
 
 router.get('/:id', moviesController.getSingle);
 
-router.post('/', moviesController.createMovies)
+router.post('/', isAuthenticated, moviesController.createMovies)
 
-router.put('/:id', moviesController.updateMovies)
+router.put('/:id', isAuthenticated, moviesController.updateMovies)
 
 router.delete('/:id', moviesController.deleteMovies)
 
