@@ -6,6 +6,7 @@ router.use('/', require('./swagger'));
 router.use('/cds', require('./cd'))
 router.use('/books', require('./books'));
 router.use('/users', require('./users'));
+router.use('/movies', require('./movies'))
 
 //OAuth Login and Logout enpoints.
 router.get('/login', passport.authenticate('github'), (req, res) => { });
