@@ -47,7 +47,7 @@ const addMovie = async (req, res) => {
             releaseYear: req.body.releaseYear,
             durationMinutes: req.body.durationMinutes,
             rating: req.body.rating,
-            avaible: req.body.avaible
+            available: req.body.available
         };
         const response = await mongodb.getDatabase().db().collection('movies').insertOne(movie);
         if (response.acknowledged) {
@@ -74,7 +74,7 @@ const updateMovie = async (req, res) => {
             releaseYear: req.body.releaseYear,
             durationMinutes: req.body.durationMinutes,
             rating: req.body.rating,
-            avaible: req.body.avaible
+            available: req.body.available
         };
         const response = await mongodb.getDatabase().db().collection('movie').replaceOne({ _id: movieId }, movie);
         console.log(response);
