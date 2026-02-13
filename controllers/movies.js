@@ -28,7 +28,7 @@ const getSingle = async (req, res) => {
             .db()
             .collection('movies')
             .findOne({ _id: moviesId });
-        if (!product) {
+        if (!moviesId) {
             return res.status(404).json({ message: 'Movies not found' });
         }
         res.status(200).json(movie);
@@ -76,7 +76,7 @@ const updateMovie = async (req, res) => {
             rating: req.body.rating,
             available: req.body.available
         };
-        const response = await mongodb.getDatabase().db().collection('movie').replaceOne({ _id: movieId }, movie);
+        const response = await mongodb.getDatabase().db().collection('movies').replaceOne({ _id: movieId }, movie);
         console.log(response);
         if (response.modifiedCount > 0) {
             res.status(204).send();
