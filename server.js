@@ -35,18 +35,19 @@ process.on('uncaughtException', (err, origin) => {
     console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`)
 });
 
-
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: process.env.CALLBACK_URL
-},
-    function (accessToken, refreshToken, profile, done) {
-        //User.findorCreate({ githubId: profile.id }, function (err, user){
-        return done(null, profile);
-        //});
-    }
-));
+if (process.env.NODE_ENV !== 'test') {
+    passport.use(new GitHubStrategy({
+        clientID: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        callbackURL: process.env.CALLBACK_URL
+    },
+        function (accessToken, refreshToken, profile, done) {
+            //User.findorCreate({ githubId: profile.id }, function (err, user){
+            return done(null, profile);
+            //});
+        }
+    ));
+}
 
 passport.serializeUser((user, done) => {
     done(null, user);
@@ -70,8 +71,12 @@ mongodb.initDb((err) => {
     if (err) {
         console.log(err);
     } else {
-        app.listen(port, () => {
-            console.log(`App started on port ${port}`);
-        });
+        if (process.env.NODE_ENV !== 'test') {
+            app.listen(port, () => {
+                console.log(`App started on port ${port}`);
+            });
+        }
     }
 });
+
+module.exports = app;
