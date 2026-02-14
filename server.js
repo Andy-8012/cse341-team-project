@@ -67,16 +67,17 @@ app.get('/auth/github/callback', passport.authenticate('github', {
     });
 
 
-mongodb.initDb((err) => {
-    if (err) {
-        console.log(err);
-    } else {
-        if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test') {
+    mongodb.initDb()
+        .then(() => {
             app.listen(port, () => {
                 console.log(`App started on port ${port}`);
             });
-        }
-    }
-});
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+}
+
 
 module.exports = app;

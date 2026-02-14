@@ -6,7 +6,6 @@ const getAll = async (req, res) => {
     try {
         const books = await mongodb
             .getDatabase()
-            .db()
             .collection('books')
             .find()
             .toArray();
@@ -26,7 +25,6 @@ const getSingle = async (req, res) => {
 
         const book = await mongodb
             .getDatabase()
-            .db()
             .collection('books')
             .findOne({ _id: new ObjectId(req.params.id) });
 
@@ -55,7 +53,6 @@ const createBook = async (req, res) => {
 
         const response = await mongodb
             .getDatabase()
-            .db()
             .collection('books')
             .insertOne(book);
 
@@ -84,7 +81,6 @@ const updateBook = async (req, res) => {
 
         const response = await mongodb
             .getDatabase()
-            .db()
             .collection('books')
             .replaceOne(
                 { _id: new ObjectId(req.params.id) },
@@ -111,7 +107,6 @@ const deleteBook = async (req, res) => {
 
         const response = await mongodb
             .getDatabase()
-            .db()
             .collection('books')
             .deleteOne({ _id: new ObjectId(req.params.id) });
 
