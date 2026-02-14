@@ -12,7 +12,7 @@ router.post('/', isAuthenticated, cdValidator.cdValidationRules(), cdValidator.v
 
 router.put('/:id', isAuthenticated, cdValidator.cdValidationRules(), cdValidator.validate, cdController.updateCD)
 
-router.delete('/:id', cdController.deleteCD)
+router.delete('/:id', isAuthenticated, cdController.deleteCD)
 
 module.exports = router;
 

@@ -12,6 +12,6 @@ router.post('/', isAuthenticated, movieValidator.saveMovie, moviesController.add
 
 router.put('/:id', isAuthenticated, movieValidator.saveMovie, moviesController.updateMovie)
 
-router.delete('/:id', moviesController.deleteMovie)
+router.delete('/:id', isAuthenticated, moviesController.deleteMovie)
 
 module.exports = router;
