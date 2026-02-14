@@ -28,7 +28,7 @@ const getSingle = async (req, res) => {
             .db()
             .collection('movies')
             .findOne({ _id: moviesId });
-        if (!product) {
+        if (!movie) {
             return res.status(404).json({ message: 'Movies not found' });
         }
         res.status(200).json(movie);
@@ -47,7 +47,7 @@ const addMovie = async (req, res) => {
             releaseYear: req.body.releaseYear,
             durationMinutes: req.body.durationMinutes,
             rating: req.body.rating,
-            avaible: req.body.avaible
+            available: req.body.available
         };
         const response = await mongodb.getDatabase().db().collection('movies').insertOne(movie);
         if (response.acknowledged) {
@@ -74,9 +74,9 @@ const updateMovie = async (req, res) => {
             releaseYear: req.body.releaseYear,
             durationMinutes: req.body.durationMinutes,
             rating: req.body.rating,
-            avaible: req.body.avaible
+            available: req.body.available
         };
-        const response = await mongodb.getDatabase().db().collection('movie').replaceOne({ _id: movieId }, movie);
+        const response = await mongodb.getDatabase().db().collection('movies').replaceOne({ _id: movieId }, movie);
         console.log(response);
         if (response.modifiedCount > 0) {
             res.status(204).send();

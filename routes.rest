@@ -1,0 +1,111 @@
+get all cds on render GET https://cse341-team-project-7569.onrender.com/cds
+
+get cds by id on render GET https://cse341-team-project-7569.onrender.com/cds/
+
+Create contact POST https://cse341-team-project-7569.onrender.com/cds HTTP/1.1 content-type: application/json
+
+{
+    "title": "Test Book",
+    "author": "Jane Doe",
+    "isbn": "978-3-16-148410-0",
+    "genre": "Fiction",
+    "pages": 320,
+    "publishedYear": 2023,
+    "available": true
+}
+
+PUT contact PUT https://cse341-team-project-7569.onrender.com/cds/ HTTP/1.1 content-type: application/json
+
+{
+    "title": "Test",
+    "author": "Jane test",
+    "isbn": "978-3-16-148410-0",
+    "genre": "test",
+    "pages": 320,
+    "publishedYear": 2023,
+    "available": true
+}
+
+DELETE contact DELETE https://cse341-team-project-7569.onrender.com/cds/ HTTP/1.1
+
+get all books on render GET https://cse341-team-project-7569.onrender.com/books
+
+get book by id on render GET https://cse341-team-project-7569.onrender.com/books/
+
+Create book POST https://cse341-team-project-7569.onrender.com/books HTTP/1.1 content-type: application/json
+
+{
+    "title": "Test Album",
+    "artist": "Test Artist",
+    "genre": "Pop",
+    "releaseYear": 2022,
+    "label": "Universal Music"
+}
+
+PUT book PUT https://cse341-team-project-7569.onrender.com/books/ HTTP/1.1 content-type: application/json
+
+{
+    "title": "Test",
+    "artist": "Test",
+    "genre": "test",
+    "releaseYear": 2022,
+    "label": "test"
+}
+
+DELETE book DELETE https://cse341-team-project-7569.onrender.com/books/ HTTP/1.1
+
+get all users on render GET https://cse341-team-project-7569.onrender.com/users
+
+get user by id on render GET https://cse341-team-project-7569.onrender.com/users/
+
+Create user POST https://cse341-team-project-7569.onrender.com/users HTTP/1.1 content-type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "testuser@example.com",
+    "username": "testuser01",
+    "role": "admin"
+}
+
+PUT user PUT https://cse341-team-project-7569.onrender.com/users/ HTTP/1.1 content-type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "Test",
+    "email": "testuser@example.com",
+    "username": "testuser01",
+    "role": "admin"
+}
+
+DELETE user DELETE https://cse341-team-project-7569.onrender.com/users/ HTTP/1.1
+
+get all movies on render GET https://cse341-team-project-7569.onrender.com/movies
+
+get movie by id on render GET https://cse341-team-project-7569.onrender.com/movies/
+
+Create contact POST https://cse341-team-project-7569.onrender.com/movies HTTP/1.1 content-type: application/json
+
+{
+    "title": "Test Movie",
+    "director": "John Smith",
+    "genre": "Action",
+    "releaseYear": 2024,
+    "durationMinutes": 120,
+    "rating": "PG-13",
+    "available": true
+}
+
+PUT movie PUT https://cse341-team-project-7569.onrender.com/movies/ HTTP/1.1 content-type: application/json
+
+{
+    "title": "Test",
+    "director": "test",
+    "genre": "test",
+    "releaseYear": 2024,
+    "durationMinutes": 120,
+    "rating": "PG-13",
+    "available": true
+}
+
+DELETE movie DELETE https://cse341-team-project-7569.onrender.com/movies/ HTTP/1.1
