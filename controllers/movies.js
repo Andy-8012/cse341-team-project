@@ -2,6 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
+    //#swagger.tags=['Movies']
     try {
         const movies = await mongodb
             .getDatabase()
@@ -17,6 +18,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags=['Movies']
     try {
         if (!ObjectId.isValid(req.params.id)) {
             return res.status(400).json({ message: 'Invalid movies id' });
@@ -37,6 +39,7 @@ const getSingle = async (req, res) => {
 };
 
 const addMovie = async (req, res) => {
+    //#swagger.tags=['Movies']
     try {
         const movie = {
             title: req.body.title,
@@ -60,6 +63,7 @@ const addMovie = async (req, res) => {
 };
 
 const updateMovie = async (req, res) => {
+    //#swagger.tags=['Movies']
     try {
         if (!ObjectId.isValid(req.params.id)) {
             return res.status(400).json('Must use a valid movie id to update a movie.');
@@ -88,6 +92,7 @@ const updateMovie = async (req, res) => {
 };
 
 const deleteMovie = async (req, res) => {
+    //#swagger.tags=['Movies']
     try {
         if (!ObjectId.isValid(req.params.id)) {
             return res.status(400).json('Must use a valid movie id to delete a movie.');
