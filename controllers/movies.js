@@ -5,7 +5,6 @@ const getAll = async (req, res) => {
     try {
         const movies = await mongodb
             .getDatabase()
-            .db()
             .collection('movies')
             .find({})
             .toArray();
@@ -25,7 +24,6 @@ const getSingle = async (req, res) => {
         const moviesId = new ObjectId(req.params.id);
         const movie = await mongodb
             .getDatabase()
-            .db()
             .collection('movies')
             .findOne({ _id: moviesId });
         if (!moviesId) {
@@ -49,7 +47,7 @@ const addMovie = async (req, res) => {
             rating: req.body.rating,
             available: req.body.available
         };
-        const response = await mongodb.getDatabase().db().collection('movies').insertOne(movie);
+        const response = await mongodb.getDatabase().collection('movies').insertOne(movie);
         if (response.acknowledged) {
             res.status(201).json(response);
         } else {
@@ -76,7 +74,7 @@ const updateMovie = async (req, res) => {
             rating: req.body.rating,
             available: req.body.available
         };
-        const response = await mongodb.getDatabase().db().collection('movies').replaceOne({ _id: movieId }, movie);
+        const response = await mongodb.getDatabase().collection('movies').replaceOne({ _id: movieId }, movie);
         console.log(response);
         if (response.modifiedCount > 0) {
             res.status(204).send();
@@ -95,7 +93,7 @@ const deleteMovie = async (req, res) => {
             return res.status(400).json('Must use a valid movie id to delete a movie.');
         }
         const movieId = new ObjectId(req.params.id);
-        const response = await mongodb.getDatabase().db().collection('movies').deleteOne({ _id: movieId });
+        const response = await mongodb.getDatabase().collection('movies').deleteOne({ _id: movieId });
         console.log(response);
         if (response.deletedCount > 0) {
             res.status(204).send();
