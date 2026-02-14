@@ -201,6 +201,9 @@
           "200": {
             "description": "OK"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -391,6 +394,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -569,6 +575,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -580,6 +589,9 @@
     },
     "/movies/": {
       "get": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -591,6 +603,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
@@ -631,6 +646,9 @@
           "401": {
             "description": "Unauthorized"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -639,6 +657,9 @@
     },
     "/movies/{id}": {
       "get": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
@@ -664,6 +685,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
@@ -713,12 +737,18 @@
           "401": {
             "description": "Unauthorized"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "tags": [
+          "Movies"
+        ],
         "description": "",
         "parameters": [
           {
@@ -734,6 +764,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
