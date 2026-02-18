@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res) => {
     //#swagger.tags=['cds']
     try {
-        const db = mongodb.getDatabase().db();
+        const db = mongodb.getDatabase();
         const cds = await db
             .collection('cds')
             .find()
@@ -21,7 +21,7 @@ const getById = async (req, res) => {
     try {
         const cdID = new ObjectId(req.params.id);
 
-        const db = mongodb.getDatabase().db();
+        const db = mongodb.getDatabase();
         const cd = await db
             .collection('cds')
             .findOne({ _id: cdID });
@@ -50,7 +50,6 @@ const createCD = async (req, res) => {
 
         const response = await mongodb
             .getDatabase()
-            .db()
             .collection('cds')
             .insertOne(cd);
 
@@ -83,7 +82,6 @@ const updateCD = async (req, res) => {
 
         const response = await mongodb
             .getDatabase()
-            .db()
             .collection('cds')
             .replaceOne({ _id: cdId }, cd);
 
@@ -114,7 +112,6 @@ const deleteCD = async (req, res) => {
 
         const response = await mongodb
             .getDatabase()
-            .db()
             .collection('cds')
             .deleteOne({ _id: cdId });
 
